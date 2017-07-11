@@ -1,0 +1,49 @@
+{
+  "name": "state-machines",
+  "version": "0.0.1",
+  "description": "State machines library for TypeScript and JavaScript",
+  "license": "MIT",
+  "homepage": "https://github.com/p-org/typescript-actors",
+  "repository": "p-org/typescript-actors",
+  "author": "Paul Thomson",
+  "keywords": [
+    "state-machines",
+    "state-machine",
+    "actors",
+    "actor",
+    "typed",
+    "typed-actors",
+    "library",
+    "framework",
+    "asynchronous",
+    "systematic-testing",
+    "testing",
+    "async",
+    "await",
+    "typescript",
+    "javascript"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "async-actors": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.0",
+    "rimraf": "^2.0.0",
+    "tslint": "^5.0.0",
+    "typescript": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

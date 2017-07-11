@@ -1,0 +1,53 @@
+{
+  "name": "async-actors",
+  "version": "0.0.1",
+  "description": "Actors library for TypeScript and JavaScript",
+  "license": "MIT",
+  "homepage": "https://github.com/p-org/typescript-actors",
+  "repository": "p-org/typescript-actors",
+  "author": "Paul Thomson",
+  "keywords": [
+    "actors",
+    "actor",
+    "typed",
+    "typed-actors",
+    "library",
+    "framework",
+    "asynchronous",
+    "systematic-testing",
+    "testing",
+    "async",
+    "await",
+    "typescript",
+    "javascript"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "random-js": "^1.0.8",
+    "assert": "^1.4.1",
+    "exit-hook": "^1.1.1",
+    "bluebird": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.0",
+    "@types/random-js": "^1.0.28",
+    "@types/assert": "^0.0.31",
+    "@types/bluebird-global": "^3.5.2",
+    "rimraf": "^2.0.0",
+    "tslint": "^5.0.0",
+    "typescript": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

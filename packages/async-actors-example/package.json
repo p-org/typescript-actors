@@ -1,0 +1,35 @@
+{
+  "name": "async-actors-example",
+  "version": "0.0.1",
+  "description": "async-actors-example",
+  "license": "MIT",
+  "repository": "",
+  "author": "Paul Thomson",
+  "keywords": [
+    "actors"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/app.js",
+  "scripts": {
+    "run": "node lib/app.js",
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "async-actors": "^0.0.1",
+    "fs-extra-promise": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra-promise": "^1.0.1",
+    "rimraf": "^2.0.0",
+    "tslint": "^5.0.0",
+    "typescript": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+<% files.forEach(function(info){ %>
+  <% if(info.isfile) { %>
+      <li><span class="fileSpan" onclick="fileClickHandler('<%= info.encodedname %>')"><%= info.shortname %></span></li>
+  <% } else { %>
+      <li>
+      <input id="<%= 'i' + info.elemid %>" onclick="dirClickHandler('<%= info.elemid %>', '<%= info.encodedname %>')" type="checkbox" />
+      <label  onclick="dirClickHandlerLbl('<%= info.elemid %>', '<%= info.encodedname %>')"><span class="dirSpan"><%= info.shortname %></span></label>
+      <ul id="<%= 'c' + info.elemid %>"></ul>
+      </li>
+  <% } %>
+<% }); %>
+        

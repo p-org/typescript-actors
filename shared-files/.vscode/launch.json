@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}\\lib\\app.js",
+            "outFiles": ["${workspaceRoot}\\lib\\**\\*.js"],
+            "sourceMaps": true
+        },
+        {
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "name": "Test program",
+            "program": "${workspaceRoot}\\lib\\test.js",
+            "outFiles": ["${workspaceRoot}\\lib\\**\\*.js"],
+            "sourceMaps": true
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Port",
+            "address": "localhost",
+            "port": 5858,
+            "outFiles": ["${workspaceRoot}\\lib\\**\\*.js"]
+        }
+    ]
+}

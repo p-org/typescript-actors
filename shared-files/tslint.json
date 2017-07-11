@@ -1,0 +1,28 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "interface-name": [
+      true, "never-prefix"
+    ],
+    "no-namespace": [
+      "allow-declarations"
+    ],
+    "no-trailing-whitespace": true,
+    "no-inferrable-types": [true],
+    "no-null-keyword": true,
+    "prefer-const": true,
+    "no-switch-case-fall-through": true,
+    "triple-equals": true,
+    "jsdoc-format": true,
+    "max-classes-per-file": [
+      false
+    ],
+    "no-console": [
+      false
+    ],
+    "no-consecutive-blank-lines": [
+      false
+    ]
+
+  }
+}

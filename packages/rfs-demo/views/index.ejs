@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    html {
+        margin-top: 20px; margin-bottom: 0px; margin-left: 2px; margin-right: 2px;
+        padding: 0;
+        color: black; font-size: 10pt; 
+        font-family: "Calibiri", "Trebuchet MS", sans-serif;
+    }
+    #header {
+        background-color: #1E90FF;
+    }
+    h1 { 
+        margin: 0;
+        padding: 0.5em;
+        text-align: center; 
+    } 
+    h2 { 
+        text-align: center; 
+    }
+    #sidebar {
+        float: left;
+        width: 20%;
+        height: 40em;
+        background-color:#E2E2E2;
+    }
+    #main {
+        float:left;
+        width:80%;
+        height: 40em;
+        background-color:#FFFFFF;
+    }
+    #footer {
+        clear:both;
+        background-color: #1E90FF;
+    }
+</style>
+<style>
+    .css3-treeview li, .css3-treeview ul {
+        padding:0;margin:0;list-style:none
+    }
+    .css3-treeview input {
+        position:absolute;opacity:0
+    }
+    .css3-treeview .dirSpan {
+        text-decoration:none
+    }
+    .css3-treeview .dirSpan:hover {
+        text-decoration:underline
+    }
+    .css3-treeview .fileSpan {
+        text-decoration:none
+    }
+    .css3-treeview .fileSpan:hover {
+        text-decoration:underline
+    }
+    .css3-treeview input+label+ul {
+        margin:0 0 0 30px
+    }
+    .css3-treeview input~ul {
+        display:none
+    }
+    .css3-treeview label, .css3-treeview label::before {
+        cursor:pointer
+    }
+    .css3-treeview input:disabled+label {
+        cursor:default;opacity:.6
+    }
+    .css3-treeview input:checked:not(:disabled)~ul {
+        display:block
+    }
+    .css3-treeview label::before {
+        content:"\25b6";margin:0 5px 0 0;font-size:12px;color:#00f;padding-left:3px
+    }
+    .css3-treeview input:checked+label::before {
+        content:"\25bc"
+    } 
+</style>
+<script>
+let server = '';
+
+function dirClickHandlerLbl(path, uri) {
+    let ielem = document.getElementById('i' + path);
+    ielem.checked = true;
+
+    dirClickHandler(path, uri);
+}
+
+function dirClickHandler(path, uri) {
+    let ielem = document.getElementById('i' + path);
+    if(ielem.checked) {
+        let celem = document.getElementById('c' + path);
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            let DONE = this.DONE || 4;
+            if (this.readyState === DONE) {
+                celem.innerHTML = this.responseText;       
+            }
+        };
+                
+        xhttp.open("GET", server + 'subdir/' + uri);
+        xhttp.send();
+    }
+}
+
+function fileClickHandler(uri) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        let DONE = this.DONE || 4;
+        if (this.readyState === DONE) {
+            let celem = document.getElementById('filecontent');
+            celem.innerHTML = this.responseText;       
+        }
+    };
+
+    xhttp.open("GET", server + 'contents/' + uri);
+    xhttp.send();
+}
+</script>
+</head>
+<body>
+
+<div id=container>
+<div id="header"><h1>File Previewer</h1></div>
+<div id="sidebar">
+<h2>File Tree</h2>
+    <div class="css3-treeview">
+    <ul>
+    <li>
+    <input id="i" onclick="dirClickHandler('', '')" type="checkbox" checked="checked" />
+    <label onclick="dirClickHandlerLbl('', '')"><span class="dirSpan">\</span></label>
+    <ul id="c">
+    <%- include('dir.ejs', files) %>
+    </ul>
+    </li>
+    </ul>
+    </div>
+</div>
+
+<div id="main">
+    <h2>Content Preview</h2>
+    <div id="filecontent"></div>
+</div>
+</div>
+
+<div id="footer">
+    <p>Footer</p>
+</div>
+
+</body>
+</html>

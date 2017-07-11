@@ -1,0 +1,36 @@
+{
+  "name": "tsc-actors",
+  "version": "0.0.1",
+  "description": "tsc-actors",
+  "license": "MIT",
+  "repository": "",
+  "author": "Paul Thomson",
+  "keywords": [
+    "actors"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/tsc-actors.js",
+  "bin" : { "tsc-actors" : "lib/tsc-actors.js" },
+  "typings": "lib/tsc-actors.d.ts",
+  "scripts": {
+    "run": "node lib/tsc-actors.js",
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "async-actors": "^0.0.1",
+    "typescript": "2.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.0",
+    "rimraf": "^2.0.0",
+    "tslint": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

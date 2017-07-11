@@ -1,0 +1,36 @@
+{
+  "name": "state-machines-example",
+  "version": "0.0.1",
+  "description": "state-machines-example",
+  "license": "MIT",
+  "repository": "",
+  "author": "Paul Thomson",
+  "keywords": [
+    "actors",
+    "state machines"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/app.js",
+  "scripts": {
+    "run": "node lib/app.js",
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "state-machines": "^0.0.1",
+    "async-actors": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.0",
+    "rimraf": "^2.0.0",
+    "tslint": "^5.0.0",
+    "typescript": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
