@@ -236,7 +236,7 @@ However, when using the testing runtime,
 the error is seen every time
 because all possible interleavings are explored.
 
-See [test.ts](packages/rfs-demo-actors/src/test.ts)
+See [test.ts](https://github.com/p-org/typescript-actors/blob/master/packages/rfs-demo-actors/src/test.ts)
 for the full test harness.
 
 ## FAQ
