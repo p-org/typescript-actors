@@ -1,6 +1,6 @@
 {
   "name": "state-machines",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "State machines library for TypeScript and JavaScript",
   "license": "MIT",
   "homepage": "https://github.com/p-org/typescript-actors",

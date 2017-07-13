@@ -21,7 +21,7 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "state-machines": "^0.0.1",
+    "state-machines": "^0.0.2",
     "async-actors": "^0.0.1"
   },
   "devDependencies": {
